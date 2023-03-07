@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+class Tczas{
+	private:
+		int godziny;
+		int minuty;
+		int sekundy;
+	public:
+		Tczas(){
+			godziny=0;
+			minuty=0;
+			sekundy=0;
+		}
+
+		Tczas(int godz){
+			godziny=godz;
+		}
+
+		Tczas(int godz, int min){
+			godziny=godz;
+			minuty=min;
+		}
+
+		Tczas(int godz, int min, int sec){
+			godziny=godz;
+			minuty=min;
+			sekundy=sec;
+		}
+
+	void dodawanie(Tczas &czas1, Tczas &czas2){
+		godziny=czas1.godziny+czas2.godziny;
+		minuty=czas1.minuty+czas2.minuty;
+		sekundy=czas1.sekundy+czas2.sekundy;
+	}
+
+	int godzina(){
+		return godziny;
+	};
+
+	int minuta(){
+		return minuty;
+	};
+
+	int sekunda(){
+		return sekundy;
+	};
+
+
+	void wyswietl(){
+		cout<<godzina()<<":"<<minuta()<<":"<<sekunda()<<" gg:mm:ss."<<endl;
+	}
+};
+
+int main() {
+	Tczas czas1 (5,3,2);
+	Tczas czas2 (5,3,2);
+	Tczas czas_suma;
+	czas_suma.dodawanie(czas1,czas2);
+	czas_suma.wyswietl();
+	}
